@@ -11,3 +11,7 @@ body {
 #p5-div {
   display: block;
 }
+#copyright {
+  margin-top: auto;
+  padding-bottom: 8px;
+}
