@@ -1,5 +1,6 @@
 //webpack.config.js
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: "development",
@@ -9,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './build'),
-    filename: "main.js" // <--- Will be compiled to this single file
+    filename: "out.js"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -28,5 +29,10 @@ module.exports = {
     },
     compress: true,
     port: 3000
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'index.html'),
+    }),
+  ]
 };
